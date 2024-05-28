@@ -1,4 +1,3 @@
-
 import pygame
 
 class Fox:
@@ -11,6 +10,20 @@ class Fox:
         self.rect = pygame.Rect(self.x, self.y, self.image_size[0], self.image_size[1])
         self.delta = .7
         self.current_direction = "right"
+
+    def move_balloon(self, direction):
+        # move the balloon up or down based on the direction!
+        # don't let the balloon move if it's at the bottom or top of the screen
+        self.rect = pygame.Rect(self.x, self.y, self.image_size[0], self.image_size[1])
+        if self.y >= 0 and self.y < 780:
+            if direction == 'up':
+                self.y -= 1
+            else:
+                self.y += 1
+        elif self.y <= 0:
+            self.y = 0
+        elif self.y <= 780:
+            self.y = 780
 
 
     def move_direction(self, direction, screen_width, screen_height):
@@ -37,7 +50,7 @@ class Fox:
 
         if direction == "down":
             self.current_direction = "down"
-            if self.y + self.delta <= 700:  # copy this to all the other directions (MAKE SURE ITS THE CORRECT BORDER)
+            if self.y + self.delta <= 780:  # copy this to all the other directions (MAKE SURE ITS THE CORRECT BORDER)
                 self.y += self.delta
 
 
