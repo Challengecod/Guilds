@@ -10,7 +10,7 @@ class Block:
         self.rescale_image(self.image)
         self.image_size = self.image.get_size()
         self.rect = pygame.Rect(self.x, self.y, self.image_size[0], self.image_size[1])
-        self.delta = .1
+        self.delta = 1
 
     def rescale_image(self, image):
         self.image_size = self.image.get_size()
@@ -27,4 +27,4 @@ class Block:
         # move the balloon up or down based on the direction!
         # don't let the balloon move if it's at the bottom or top of the screen
         self.rect = pygame.Rect(self.x, self.y, self.image_size[0], self.image_size[1])
-        self.y += 0.2
+        self.x -= 0.6

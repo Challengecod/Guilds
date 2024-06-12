@@ -1,7 +1,7 @@
 import pygame
 
 
-class Coin:
+class Coin():
 
     def __init__(self, x, y):
         self.x = x
@@ -15,10 +15,7 @@ class Coin:
         self.y = new_y
         self.rect = pygame.Rect(self.x, self.y, self.image_size[0], self.image_size[1])
 
-
     def move_coin(self):
-        # move the balloon up or down based on the direction!
-        # don't let the balloon move if it's at the bottom or top of the screen
         self.rect = pygame.Rect(self.x, self.y, self.image_size[0], self.image_size[1])
-        self.y += 0.2
+        self.x -= 0.5
 
